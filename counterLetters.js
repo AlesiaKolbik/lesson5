@@ -26,7 +26,7 @@ function prompt() {
 
 function isVowel(string) {
     let vowel ="ауоыиэяюёе";
-    return vowel.includes(string);
+    return vowel.includes(string.toLowerCase());
 }
 
 function findQuantityVowel(string) {
