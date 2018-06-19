@@ -6,7 +6,7 @@ let userString;
 
 function end() {
     console.log(findMatchesLettersWithForEach(userString));
-    console.log(findMatchesLettersWithForEach(userString));
+    console.log(findMatchesLettersWithFilter(userString));
     console.log(findMatchesLettersWithReduce(userString));
 }
 
