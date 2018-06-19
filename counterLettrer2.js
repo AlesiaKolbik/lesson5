@@ -5,8 +5,9 @@ const readline = require('readline');
 let userString;
 
 function end() {
-    console.log(findMatchLetters(userString));
-    console.log(findMatchesLet(userString));
+    console.log(findMatchesLettersWithForEach(userString));
+    console.log(findMatchesLettersWithForEach(userString));
+    console.log(findMatchesLettersWithReduce(userString));
 }
 
 function askUserString() {
@@ -28,7 +29,7 @@ function prompt() {
     return readline.createInterface({input: process.stdin, output: process.stdout})
 }
 
-function findMatchLetters(arrOfString) {
+function findMatchesLettersWithForEach(arrOfString) {
     let counter = 0;
 
     arrOfString.forEach(function (element) {
@@ -37,10 +38,16 @@ function findMatchLetters(arrOfString) {
     return counter;
 }
 
-function findMatchesLet(arrOfString){
+function findMatchesLettersWithFilter(arrOfString){
     const result = arrOfString.filter(el=> "уеыаоэяию".indexOf(el) !== -1);
     return result.length;
 
+}
+
+function findMatchesLettersWithReduce(arr) {
+    return arr.reduce(function(previousValue, currentValue) {
+        return ("уеыаоэяию".indexOf(currentValue) > -1)? previousValue +1 : previousValue;
+    },0);
 }
 
 
